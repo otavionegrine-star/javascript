@@ -1,0 +1,21 @@
+{
+  "sku_codigo": "HARD-SSD-500GB",
+  "nome_produto": "Unidade de Armazenamento SSD NVMe",
+  "marca": "TechSpeed",
+  "preco_venda": 349.90,
+  "estoque_atual": 45,
+  "categoria": "Hardware",
+  "disponivel_venda": true,
+  "dimensoes_cm": {
+    "largura": 2.2,
+    "comprimento": 8.0,
+    "altura": 0.3
+  },
+  "especificacoes_tecnicas": [
+    "Velocidade de leitura: 3500MB/s",
+    "Interface: M.2 2280",
+    "Capacidade: 500GB"
+  ],
+  "garantia_meses": 12,
+  "peso_gramas": 50
+}

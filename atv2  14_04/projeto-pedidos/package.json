@@ -1,0 +1,28 @@
+{
+  "numero_pedido": "REQ-99821",
+  "data_emissao": "2024-03-25T14:20:00Z",
+  "valor_total": 725.50,
+  "metodo_pagamento": "cartao_credito",
+  "pago": true,
+  "logistica": {
+    "peso_total_kg": 1.250,
+    "status_fragil": true,
+    "valor_declarado": 700.00,
+    "transportadora": "LogExpress"
+  },
+  "endereco_entrega": {
+    "rua": "Rua das Flores",
+    "numero": 450,
+    "cidade": "Americana",
+    "uf": "SP",
+    "cep": "13465-000"
+  },
+  "itens_comprados": [
+    { "id": 1, "nome": "SSD 500GB", "qtd": 2, "subtotal": 699.80 },
+    { "id": 2, "nome": "Cabo SATA", "qtd": 1, "subtotal": 25.70 }
+  ],
+  "status_rastreio": "Em trânsito",
+  "tentativas_entrega": 0
+}
+
+

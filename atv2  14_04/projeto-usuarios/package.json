@@ -1,0 +1,20 @@
+{
+  "usuario_id": 1025,
+  "nome_completo": "Ricardo Alencar Oliveira",
+  "username": "ricardo_dev2024",
+  "email": "ricardo.oliveira@provedor.com",
+  "idade": 29,
+  "conta_verificada": true,
+  "data_registro": "2024-01-15T10:30:00Z",
+  "documentos": {
+    "cpf": "123.456.789-10",
+    "rg": "MG-12.345.678"
+  },
+  "preferencias": {
+    "idioma": "pt-BR",
+    "notificacoes_push": false,
+    "tema_escuro": true
+  },
+  "historico_logins": ["2024-03-01", "2024-03-10", "2024-03-20"],
+  "nivel_acesso": "cliente_standard"
+}
