@@ -1,0 +1,18 @@
+{
+  "alunos": [
+    {
+      "nome": "Maria Silva",
+      "telefone": "19982643333"
+    },
+    {
+      "nome": "Carlos Pereira",
+      "telefone": "19982633333"
+    }
+  ],
+  "professores": [
+    {
+      "nome": "Jorge Carneiro",
+      "telefone": "199999999"
+    }
+  ]
+}

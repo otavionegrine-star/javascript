@@ -1,0 +1,35 @@
+{
+  "pedido_id": "EC-88210",
+  "data_pedido": "2023-10-27T10:15:22Z",
+  "status_pagamento": "aprovado",
+  "valor_total": 459.90,
+  "valor_frete": 25.50,
+  "valor_declarado": 485.40,
+  "peso_total_kg": 3.450,
+  "status_fragil": true,
+  "prioridade_entrega": "expressa",
+  "itens_pedido": [
+    {
+      "sku": "PROD-001",
+      "nome": "Monitor LED 24p",
+      "quantidade": 1,
+      "preco_unitario": 399.90,
+      "categoria": "eletronicos"
+    },
+    {
+      "sku": "CABO-010",
+      "nome": "Cabo HDMI 2m",
+      "quantidade": 2,
+      "preco_unitario": 30.00,
+      "categoria": "acessorios"
+    }
+  ],
+  "endereco_entrega": {
+    "destinatario": "Mariana Souza Oliveira",
+    "logradouro": "Avenida Paulista",
+    "numero": "1000",
+    "cidade": "São Paulo",
+    "uf": "SP"
+  },
+  "rastreamento_disponivel": true
+}

@@ -1,0 +1,26 @@
+{
+  "cliente_id": 45092,
+  "nome_completo": "Mariana Souza Oliveira",
+  "documento_cpf": "123.456.789-00",
+  "data_nascimento": "1992-05-15",
+  "ativo": true,
+  "pontuacao_fidelidade": 1250,
+  "contato": {
+    "email": "mariana.souza@email.com",
+    "telefone_celular": "11988776655"
+  },
+  "enderecos": [
+    {
+      "tipo": "residencial",
+      "logradouro": "Avenida Paulista",
+      "numero": "1000",
+      "complemento": "Apto 42",
+      "bairro": "Bela Vista",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cep": "01310-100"
+    }
+  ],
+  "preferencias_comunicacao": ["e-mail", "whatsapp"],
+  "ultima_atualizacao": "2023-10-27T14:30:00Z"
+}
