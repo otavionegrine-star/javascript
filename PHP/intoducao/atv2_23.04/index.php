@@ -12,8 +12,8 @@
     //o php se inicia aqui
 
 echo '<h2>Nossa empresa que cuia de baleias<h2>';
-echo 'AMAMOS ELAS 🐳🐳'
-// e ele termina aqui😊😊
+echo 'AMAMOS ELAS 🐳🐳'// mensagem 2
+// e ele termina aqui
 ?>
 </body>
 </html>
