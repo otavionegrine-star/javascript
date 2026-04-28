@@ -1,31 +1,28 @@
 <?php
-// Dados da Empresa
-$nome = "Padaria do João";
-$funcionarios = 12;
-$setor = "Comércio";
 
-echo "<h1>Relatório: $nome</h1>";
+echo "<h1>Relatório de Verificação de Estoque</h1>";
+echo "<table border='1' style='width: 300px; text-align: center;'>";
+echo "<thead><tr><th>Item ID</th><th>Status</th></tr></thead>";
+echo "<tbody>";
 
-//Uso de IF / ELSE
-if ($funcionarios < 10) {
-    echo "<p>Porte: Microempresa</p>";
-} else {
-    echo "<p>Porte: Pequena Empresa</p>";
+//Uso de FOR para repetir a verificação de 10 itens
+for ($item = 1; $item <= 10; $item++) {
+    
+    echo "<tr>";
+    echo "<td>Produto #$item</td>";
+
+    //Lógica integrada (IF) para decidir o status do item
+    //Aqui, simulamos que itens ímpares estão com estoque baixo
+    if ($item % 2 != 0) {
+        echo "<td style='color: red;'><strong>REPOR ESTOQUE</strong></td>";
+    } else {
+        echo "<td style='color: green;'>Disponível</td>";
+    }
+
+    echo "</tr>";
 }
 
-//Uso de SWITCH (Decisão de Imposto por Setor)
-switch ($setor) {
-    case "Indústria":
-        echo "Imposto: 12%";
-        break;
-    case "Comércio":
-        echo "Imposto: 7%";
-        break;
-    case "Serviços":
-        echo "Imposto: 10%";
-        break;
-    default:
-        echo "Imposto: A consultar";
-        break;
-}
+echo "</tbody></table>";
+
+echo "<p><em>Relatório gerado automaticamente pelo sistema.</em></p>";
 ?>
