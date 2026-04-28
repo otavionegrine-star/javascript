@@ -1,34 +1,31 @@
 <?php
-//DADOS
-$nome = "Loja de Celulares";
-$vendas = 15000;
-$custos = 8000;
-$meta = 12000;
+// Dados da Empresa
+$nome = "Padaria do João";
+$funcionarios = 12;
+$setor = "Comércio";
 
-//CÁLCULOS ARITMÉTICOS 
-$lucro = $vendas - $custos; // Subtração
-$projeçãoProximoMes = $vendas * 1.10; // Multiplicação (Aumento de 10%)
+echo "<h1>Relatório: $nome</h1>";
 
-//COMPARAÇÃO
-$bateuMeta = $vendas >= $meta; // Verifica se vendas é maior ou igual à meta
-
-//XIBIÇÃO (Com concatenação)
-echo "<h1>Relatório da " . $nome . "</h1>";
-
-echo "Vendas: R$ " . $vendas . "<br>";
-echo "Custos: R$ " . $custos . "<br>";
-echo "<b>Lucro Real: R$ " . $lucro . "</b><br>";
-
-echo "<hr>";
-
-echo "Meta do mês: R$ " . $meta . "<br>";
-
-//Mostra se bateu a meta usando a comparação
-if ($bateuMeta) {
-    echo "Status: <span style='color:green'>Meta Atingida!</span>";
+//Uso de IF / ELSE
+if ($funcionarios < 10) {
+    echo "<p>Porte: Microempresa</p>";
 } else {
-    echo "Status: <span style='color:red'>Abaixo da Meta.</span>";
+    echo "<p>Porte: Pequena Empresa</p>";
 }
 
-echo "<br>Projeção para o mês que vem: R$ " . $projeçãoProximoMes;
+//Uso de SWITCH (Decisão de Imposto por Setor)
+switch ($setor) {
+    case "Indústria":
+        echo "Imposto: 12%";
+        break;
+    case "Comércio":
+        echo "Imposto: 7%";
+        break;
+    case "Serviços":
+        echo "Imposto: 10%";
+        break;
+    default:
+        echo "Imposto: A consultar";
+        break;
+}
 ?>
