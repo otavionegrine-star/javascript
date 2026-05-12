@@ -37,6 +37,24 @@
             transition: all 0.3s ease;
         }
 
+        .page-title {
+            text-align: center;
+            margin: 0 0 1.25rem;
+            font-size: 2rem;
+            color: var(--text-main);
+        }
+
+        .page-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 100vh;
+            padding: 1.5rem 1rem;
+            box-sizing: border-box;
+        }
+
         /* Container principal */
         .container {
             background: var(--bg-card);
@@ -105,8 +123,10 @@
     </style>
 </head>
 <body data-theme="<?php echo $tema_atual ?? 'light'; ?>">
-    <div class="container">
-        <header>
-            <span class="user-badge">Sessão Ativa</span>
-            <h2>Olá, <?php echo $nome_display ?? 'Visitante'; ?>!</h2>
+    <main class="page-layout">
+        <?php echo $page_title ?? ''; ?>
+        <div class="container">
+            <header>
+                <span class="user-badge">Sessão Ativa</span>
+                <h2>Olá, <?php echo $nome_display ?? 'Visitante'; ?>!</h2>
         </header>

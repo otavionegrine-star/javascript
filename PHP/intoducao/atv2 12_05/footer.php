@@ -1,9 +1,6 @@
-        <!-- Rodapé da página com informações do sistema -->
-        <footer>
-            <p>Sistema Organizado &bull; PHP 8.x<br>
-            Cookies & Sessões aplicados com sucesso.</p>
-        </footer>
-    </div>
+        <!-- Rodapé da página removido conforme solicitado -->
+        </div>
+    </main>
 
     <!-- Script para funcionalidade do tema -->
     <script>

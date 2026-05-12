@@ -1,6 +1,8 @@
 <?php
 // Inclui o arquivo de funções que gerencia sessão e cookies
 require_once "funcoes.php";
+
+$page_title = '<h1 class="page-title">Cadastro de Nome</h1>';
 ?>
 <?php
 // Inclui o cabeçalho da página com HTML inicial e estilos
