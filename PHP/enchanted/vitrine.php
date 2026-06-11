@@ -30,10 +30,16 @@ $personagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <a href="vitrine.php" class="brand">Enchanted</a>
         <nav class="nav-menu">
             <a href="vitrine.php" class="active">Characters</a>
+            
             <?php if (isset($_SESSION['papel']) && $_SESSION['papel'] === 'funcionario'): ?>
                 <a href="cadastrar.php">Cadastrar Novo</a>
                 <a href="reservas.php">Reservas</a>
             <?php endif; ?>
+
+            <?php if (isset($_SESSION['papel']) && $_SESSION['papel'] === 'cliente'): ?>
+                <a href="minhas_reservas.php">Minhas Reservas</a>
+            <?php endif; ?>
+
             <?php if (isset($_SESSION['user_id'])): ?>
                 <span style="color: #666; font-size: 14px;">👤 <?php echo htmlspecialchars($_SESSION['nome']); ?></span>
                 <a href="logout.php">Sair</a>
@@ -65,18 +71,20 @@ $personagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($personagens as $p): ?>
                 <div class="character-card" data-category="<?php echo htmlspecialchars($p['categoria']); ?>">
                     <img src="<?php echo htmlspecialchars($p['imagem_url']); ?>" alt="">
-                    <div class="character-body">
-                        <span class="card-badge"><?php echo htmlspecialchars($p['categoria']); ?></span>
+                    <div class="character-body" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <span class="card-badge" style="margin: 0 auto 10px auto; display: inline-block;"><?php echo htmlspecialchars($p['categoria']); ?></span>
                         <h3><?php echo htmlspecialchars($p['nome']); ?></h3>
                         <p><?php echo htmlspecialchars($p['descricao']); ?></p>
                         
                         <?php if (isset($_SESSION['papel']) && $_SESSION['papel'] === 'funcionario'): ?>
-                            <form method="POST" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja excluir este personagem?');">
+                            <a href="editar.php?id=<?php echo $p['id']; ?>" class="btn-action" style="background: var(--purple-royal); text-decoration: none; display: inline-block; width: 100%; box-sizing: border-box; text-align: center; margin: 12px auto 6px auto;">📝 Editar Personagem</a>
+
+                            <form method="POST" style="display: block; width: 100%;" onsubmit="return confirm('Tem certeza que deseja excluir este personagem?');">
                                 <input type="hidden" name="excluir_personagem" value="<?php echo $p['id']; ?>">
-                                <button type="submit" class="btn-action" style="background: #EF4444; margin-top: 10px;">🗑️ Excluir Personagem</button>
+                                <button type="submit" class="btn-action" style="background: #EF4444; width: 100%; margin: 6px auto 0 auto; display: block;">🗑️ Excluir Personagem</button>
                             </form>
                         <?php else: ?>
-                            <a href="reservar.php?id=<?php echo $p['id']; ?>" class="btn-action choose-character-btn">Escolher Este Personagem</a>
+                            <a href="reservar.php?id=<?php echo $p['id']; ?>" class="btn-action choose-character-btn" style="width: 100%; text-align: center;">Escolher Este Personagem</a>
                         <?php endif; ?>
                     </div>
                 </div>
