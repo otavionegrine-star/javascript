@@ -72,6 +72,7 @@ O sistema é dividido em dois papéis fundamentais de acesso:
 
 
  ## Como entrar
+`No seu navegador` - Abra seu navegador e na barra de pesquisa e coloque http://10.87.38.135:8000/
  `Cliente` - crie uma conta caso não tenha uma, após isso você já sera encaminhado direto para a página `vitrine.php`.
 
  `Funcionário` - a conta do fúncionário é, e-mail `bia@gmail` e senha: `123456`, esse funcionário está cadastrado direto no banco de dados para uma maior segurança.
