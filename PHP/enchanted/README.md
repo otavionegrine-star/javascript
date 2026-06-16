@@ -1,24 +1,24 @@
 # Enchanted - Sistema de Reserva de Personagens Mágicos
 
-O **Enchanted** é um sistema web desenvolvido em PHP para a gestão e reserva de personagens temáticos (como heróis, princesas e figuras de desenhos animados) para festas e eventos. 
-
-O projeto conta com uma identidade visual imersiva e mágica através de um design estilizado e efeitos interativos.
+O **Enchanted** é um sistema web desenvolvido em PHP para a gestão e reserva de personagens temáticos (como heróis, princesas e personagem de desenhos) para festas e eventos. 
 
 ---
 
 ## Como Funciona o Sistema
 
-O ecossistema é dividido em dois papéis fundamentais de acesso:
+O sistema é dividido em dois papéis fundamentais de acesso:
 
 ### 1. Visão do Cliente 
 
- **Autenticação:** O cliente pode criar uma conta (`registro.php`) e fazer login (`index.php`) no reino.
+ **Autenticação:** O cliente pode criar uma conta (`registro.php`) e fazer login (`index.php`) na página.
 
  **Vitrine Mágica (`vitrine.php`):** Uma tela centralizada onde o cliente visualiza todos os personagens disponíveis no sistema. É possível fazer buscas dinâmicas em tempo real por nome e filtrar por categorias mágicas específicas.
 
- **Agendamento de Contos de Fada (`reservar.php`):** O cliente escolhe seu personagem favorito e preenche um pergaminho digital (formulário) contendo a data, o horário de início/término e o endereço completo da celebração (cidade, bairro, rua e número limitado a 4 dígitos).
+ **Agendamento de Contos de Fada (`reservar.php`):** O cliente escolhe seu personagem favorito e preenche um pergaminho digital (formulário) contendo a data, o horário de início/término e o endereço completo da festa ou evento (cidade, bairro, rua e número limitado a 4 dígitos).
 
- **Desejo Concedido (`sucesso.php`):** Ao concluir um agendamento, o cliente é direcionado para uma página de sucesso comemorativa equipada com um efeito mágico de chuva de confetes coloridos e o resumo da sua reserva real.
+ **Desejo Concedido (`sucesso.php`):** Ao concluir um agendamento, o cliente é direcionado para uma página de sucesso comemorativa equipada com um efeito mágico de chuva de confetes coloridos e o resumo da sua reserva.
+
+ **Minhas reservas (`minhas_reservas.php`):** Ná página inicial o cliente pode ver suas reservas
 
 ###  Visão do Funcionário 
 
@@ -28,6 +28,7 @@ O ecossistema é dividido em dois papéis fundamentais de acesso:
 
  **Painel de Reservas (`reservas.php`):** Uma central onde a equipe administrativa consegue visualizar todas as reservas solicitadas no reino, os dados de contato do cliente (nome e e-mail) e tem o poder de cancelar agendamentos se necessário.
 
+**Editar (`editar.php`):** Um botão que te lev á página paraeditar o persomagem já adicionado
 ---
 
 ## Tecnologias Utilizadas
@@ -42,13 +43,35 @@ O ecossistema é dividido em dois papéis fundamentais de acesso:
 ## Estrutura de Arquivos
 
  `index.php` - Tela de login unificada com seleção de papel (Cliente/Funcionário).
+
  `registro.php` - Criação de novas contas para usuários do sistema.
+
  `logout.php` - Encerramento seguro da sessão atual.
+
  `vitrine.php` - O coração do sistema, catálogo interativo de personagens.
+
  `reservar.php` - Formulário detalhado para agendamento de eventos por parte do cliente.
+
  `sucesso.php` - Tela de confirmação estilizada com animação de confetes.
- `cadastrar.php` - Painel do funcionário para upload e registro de novas atrações.
+
+ `minhas_reservas` - Tela para o cliente ver suas próprias reservas.
+
+ `cadastrar.php` - Painel do funcionário para upload e registro de novos personagens.
+
+ `editar.php` - Edita personagens já cadastrado
+
  `reservas.php` - Painel de controle e listagem de agendamentos para a administração.
+
  `setup.php` - Script utilitário automático para rodar migrações estruturais.
- `migration.sql` - Arquivo de comandos SQL para atualização ou criação das tabelas do banco de dados.
+
+ `beckup.sql` - Arquivo de comandos SQL para atualização ou criação das tabelas do banco de dados.
+
  `css/style.css` - Folha de estilos unificada contendo a identidade visual mágica do projeto.
+
+---
+
+
+ ## Como entrar
+ `Cliente` - crie uma conta caso não tenha uma, após isso você já sera encaminhado direto para a página `vitrine.php`.
+
+ `Funcionário` - a conta do fúncionário é, e-mail `bia@gmail` e senha: `123456`, esse funcionário está cadastrado direto no banco de dados para uma maior segurança.
