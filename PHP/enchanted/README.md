@@ -7,15 +7,28 @@ O **Enchanted** é um sistema web desenvolvido em PHP para a gestão e reserva d
 # Executar projeto
 
 ### 1. Clonagem do repositório
+```bash
 **git clone** <https://github.com/otavionegrine-star/javascript/tree/main/PHP/enchanted>
-
+```
 ### 2. Iniciar o php
+```bash
 php -S 0.0.0.0:7654
+```
 
 ### 3. Para acessar
+```bash
 http://localhost:7654/
-
+```
 ---
+# Restaurando o Banco
+
+Para importar o banco através do arquivo de backup:
+
+```bash
+psql -U postgres -d enchanted -f backup.sql
+```
+
+
 
 ## Como Funciona o Sistema
 
@@ -85,6 +98,12 @@ O sistema é dividido em dois papéis fundamentais de acesso:
 
 
  ## Como entrar
- `Cliente` - crie uma conta caso não tenha uma, após isso você já sera encaminhado direto para a página `vitrine.php`.
+  **Cliente:** crie uma conta caso não tenha uma, após isso você já sera encaminhado direto para a página `vitrine.php`.
 
- `Funcionário` - a conta do fúncionário é, e-mail `bia@gmail` e senha: `123456`, esse funcionário está cadastrado direto no banco de dados para uma maior segurança.
+ **Funcionário:**
+
+  **e-mail:** `bia@gmail`
+
+  **senha:** `123456`
+
+ Esse funcionário está cadastrado direto no banco de dados para uma maior segurança.
