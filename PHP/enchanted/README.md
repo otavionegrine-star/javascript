@@ -60,7 +60,7 @@ O sistema é dividido em dois papéis fundamentais de acesso:
 ## Tecnologias Utilizadas
 
  **Backend:** PHP (Gerenciamento de sessões, upload de arquivos e arquitetura procedural)
- **Banco de Dados:** PostgreSQL / MySQL (utilizando a camada de abordagem segura `PDO`)
+ **Banco de Dados:** PostgreSQL (utilizando a camada de abordagem segura `PDO`)
  **Frontend:** HTML5, CSS3 personalizado (Variáveis nativas, animações e fontes estilizadas)
  **Interações:** JavaScript (Filtros assíncronos na vitrine e biblioteca `canvas-confetti` via CDN na tela de sucesso)
 
