@@ -28,6 +28,12 @@ Para importar o banco através do arquivo de backup:
 psql -U postgres -d enchanted -f backup.sql
 ```
 
+---
+
+# Figma
+```bash
+https://www.figma.com/design/CZX2WOig2gxINaTvMxbRKf/Enchanted?node-id=0-1&p=f&t=C5dYbkUhbpAzEram-0
+```
 
 
 ## Como Funciona o Sistema
