@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Produtos - Almoxarifado</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f7fafc; color: #2d3748; padding: 20px; }
+    .header-bar { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 20px auto; }
+    .btn-back { background-color: #718096; color: white; text-decoration: none; padding: 8px 14px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; }
+    .btn-back:hover { background-color: #4a5568; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-card { background: white; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 25px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .section-card h3 { margin-bottom: 15px; color: #2b6cb0; font-size: 1.2rem; border-bottom: 2px solid #edf2f7; padding-bottom: 8px; }
+    .grid-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+    .form-field { display: flex; flex-direction: column; }
+    .form-field label { font-size: 0.85rem; font-weight: 600; color: #4a5568; margin-bottom: 4px; }
+    .form-field input { padding: 8px 10px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 0.95rem; }
+    .form-actions { margin-top: 15px; display: flex; gap: 10px; }
+    .btn-save { background-color: #38a169; color: white; border: none; padding: 10px 20px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+    .btn-save:hover { background-color: #2f855a; }
+    .btn-cancel { background-color: #cbd5e0; color: #2d3748; border: none; padding: 10px 15px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+    .search-box { display: flex; gap: 10px; margin-bottom: 15px; }
+    .search-box input { flex: 1; padding: 8px 12px; border: 1px solid #cbd5e0; border-radius: 4px; }
+    .btn-search { background-color: #3182ce; color: white; border: none; padding: 8px 16px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #e2e8f0; padding: 10px 12px; text-align: left; font-size: 0.9rem; }
+    th { background-color: #edf2f7; color: #4a5568; font-weight: 600; }
+    tr:nth-child(even) { background-color: #f7fafc; }
+    .btn-edit { background-color: #d69e2e; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 0.8rem; margin-right: 5px; }
+    .btn-delete { background-color: #e53e3e; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    <h2>Cadastro de Produtos</h2>
+    <!-- Retornar ao Dashboard (Item 6.1.7) -->
+    <a href="dashboard.html" class="btn-back">← Voltar ao Dashboard</a>
+  </div>
+
+  <div class="container">
+    
+    <!-- Form de Inserção e Edição (Item 6.1.3, 6.1.4 e 6.1.6) -->
+    <div class="section-card">
+      <h3 id="formTitle">Novo Produto</h3>
+      <form id="produtoForm" onsubmit="salvarProduto(event)">
+        <input type="hidden" id="prodId">
+        
+        <div class="grid-form">
+          <div class="form-field">
+            <label for="codigo">Código *</label>
+            <input type="text" id="codigo" required placeholder="Ex: MRT-001">
+          </div>
+          <div class="form-field">
+            <label for="nome">Nome do Produto *</label>
+            <input type="text" id="nome" required placeholder="Ex: Martelo Unha 27mm">
+          </div>
+          <div class="form-field">
+            <label for="categoria">Categoria *</label>
+            <input type="text" id="categoria" required placeholder="Ex: Martelos">
+          </div>
+          <div class="form-field">
+            <label for="especificacoes">Especificações</label>
+            <input type="text" id="especificacoes" placeholder="Ex: Cabo Fibra / Ponta Imantada">
+          </div>
+          <div class="form-field">
+            <label for="tamanho">Tamanho/Dimensões</label>
+            <input type="text" id="tamanho" placeholder="Ex: 32cm / 1/4 inch">
+          </div>
+          <div class="form-field">
+            <label for="peso">Peso (Kg)</label>
+            <input type="number" step="0.01" id="peso" placeholder="0.00">
+          </div>
+          <div class="form-field">
+            <label for="quantidade_atual">Qtd. Inicial *</label>
+            <input type="number" id="quantidade_atual" required min="0">
+          </div>
+          <div class="form-field">
+            <label for="quantidade_minima">Qtd. Mínima (Alerta) *</label>
+            <input type="number" id="quantidade_minima" required min="0">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-save">Salvar Produto</button>
+          <button type="button" class="btn-cancel" onclick="resetarFormularioProduto()">Limpar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Filtro e Listagem de Produtos (Item 6.1.1 e 6.1.2) -->
+    <div class="section-card">
+      <h3>Catálogo de Produtos</h3>
+      
+      <div class="search-box">
+        <input type="text" id="searchTerm" placeholder="Buscar produto por nome, categoria ou especificações...">
+        <button type="button" class="btn-search" onclick="carregarProdutos()">Buscar</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Especificações</th>
+            <th>Qtd. Atual</th>
+            <th>Qtd. Mínima</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaProdutos"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    verificarAutenticacao();
+    carregarProdutos();
+  </script>
+</body>
+</html>

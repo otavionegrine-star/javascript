@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Controle de Almoxarifado</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f0f2f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .login-card { background: #ffffff; width: 100%; max-width: 380px; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .login-card h2 { text-align: center; color: #1a252f; margin-bottom: 20px; font-size: 1.5rem; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 6px; font-weight: 600; color: #4a5568; font-size: 0.9rem; }
+    .form-group input { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    .form-group input:focus { border-color: #3182ce; }
+    .btn-submit { width: 100%; padding: 12px; background-color: #3182ce; color: #ffffff; border: none; border-radius: 4px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+    .btn-submit:hover { background-color: #2b6cb0; }
+    .alert { background-color: #fed7d7; color: #9b2c2c; padding: 10px; border-radius: 4px; border: 1px solid #feb2b2; margin-bottom: 15px; font-size: 0.875rem; text-align: center; display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <h2>Almoxarifado SAEP</h2>
+    
+    <!-- Alerta de falha na autenticação (Item 4.1) -->
+    <div id="alert" class="alert"></div>
+
+    <form id="loginForm" onsubmit="efetuarLogin(event)">
+      <div class="form-group">
+        <label for="email">E-mail Corporativo:</label>
+        <input type="email" id="email" required placeholder="ex: carlos@empresa.com">
+      </div>
+      
+      <div class="form-group">
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" required placeholder="••••••••">
+      </div>
+
+      <button type="submit" class="btn-submit">Entrar no Sistema</button>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
